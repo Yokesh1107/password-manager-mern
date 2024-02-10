@@ -17,7 +17,7 @@ app.use(bodyParser.text({type: '*/*'}));
 app.use(cookieParser())
 
 /**PORT */
-const PORT=2003||process.env.PORT
+const PORT=process.env.PORT
 
 app.listen(PORT,()=>{
     console.log(`SERVER RUNNING ON ${PORT}`)
