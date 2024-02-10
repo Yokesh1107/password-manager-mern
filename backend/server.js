@@ -26,7 +26,7 @@ app.use(session({
 
 
 /**PORT */
-const PORT=2003||process.env.PORT
+const PORT=process.env.PORT
 
 app.listen(PORT,()=>{
     console.log(`SERVER RUNNING ON ${PORT}`)
