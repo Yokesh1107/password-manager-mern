@@ -13,7 +13,7 @@ const EditData = () => {
         if(document.cookie.length<=13){
             navigate('/login')
            }
-        fetch('http://localhost:2003/data/edit/'+id).then(response=>{response.json().then(results=>{
+        fetch('https://passwordmanage.onrender.com/data/edit/'+id).then(response=>{response.json().then(results=>{
             setSocial(results.social)
             setUserid(results.userid)
             setPassword(results.password)
@@ -23,7 +23,7 @@ const EditData = () => {
     
     const handleSubmit=async()=>{
         
-        const res=await fetch('http://localhost:2003/data/update',{
+        const res=await fetch('https://passwordmanage.onrender.com/data/update',{
             method:'PUT',
             body:JSON.stringify({id,userid,social,password}),
             headers:{'Content-type':'application/json'},

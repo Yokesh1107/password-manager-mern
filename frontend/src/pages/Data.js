@@ -39,7 +39,7 @@ const Data = () => {
       }
       const username=getCookie("user")
     const handleSubmit=async(e)=>{
-        const res=await fetch('http://localhost:2003/data/new/'+username,{
+        const res=await fetch('https://passwordmanage.onrender.com/data/new/'+username,{
             method:'POST',
             body:JSON.stringify({socialmedia,userid,password}),
             credentials:'include',

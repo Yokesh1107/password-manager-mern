@@ -17,7 +17,7 @@ const Register = () => {
       setPassword(e.target.value)
     }
     const handleSubmit=async(e)=>{
-      const res=await fetch('http://localhost:2003/auth/register',{
+      const res=await fetch('https://passwordmanage.onrender.com/auth/register',{
         method:'POST',
         body:JSON.stringify({username,password}),
         headers:{'Content-type':'application/json'},

@@ -23,7 +23,7 @@ const Home = () => {
         if(document.cookie.length<=13){
             navigate('/login')
            }
-        const res=fetch('http://localhost:2003/data/'+username,{
+        const res=fetch('https://passwordmanage.onrender.com/data/'+username,{
             method:'GET',
             credentials:'include',
             

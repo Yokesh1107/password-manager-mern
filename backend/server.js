@@ -6,7 +6,7 @@ const authRoutes=require('./routes/auth')
 const dataRoutes=require('./routes/data')
 const userModel = require('./models/UserModel')
 const cookieParser=require('cookie-parser')
-
+const session=require('express-session')
 const app=express()
 require('dotenv').config()
 app.use(express.json())
@@ -15,6 +15,15 @@ app.use(bodyParser.json({type: 'application/json'}));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.text({type: '*/*'}));
 app.use(cookieParser())
+app.use(session({
+    resave:"true",
+    saveUninitialized:"true",
+    secret:process.env.SECRET,
+    cookie:{
+        sameSite:"none",
+    },
+}))
+
 
 /**PORT */
 const PORT=2003||process.env.PORT
