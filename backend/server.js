@@ -20,6 +20,7 @@ app.use(session({
     saveUninitialized:"true",
     secret:process.env.SECRET,
     cookie:{
+        secure:"true",
         sameSite:"none",
     },
 }))
