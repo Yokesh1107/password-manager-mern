@@ -35,11 +35,13 @@ router.post('/login', async (req, res) => {
                 res.cookie('user',username,{
           secure:true,
             sameSite: "none",
+                     httpOnly: false,
          
         })
                 res.cookie('token',token,{
         secure:true,
             sameSite: "none",
+                    httpOnly: false,
          
         }).json('logged in')
             })
