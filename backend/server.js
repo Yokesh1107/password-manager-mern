@@ -8,6 +8,7 @@ const userModel = require('./models/UserModel')
 const cookieParser=require('cookie-parser')
 const session=require('express-session')
 const app=express()
+
 require('dotenv').config()
 app.use(express.json())
 app.use(cors({credentials:true,origin:['http://localhost:3000','https://password-manager-cv3s.onrender.com']}))
@@ -15,20 +16,11 @@ app.use(bodyParser.json({type: 'application/json'}));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.text({type: '*/*'}));
 app.use(cookieParser())
-app.use(session({
-    resave:"true",
-    saveUninitialized:"true",
-    secret:process.env.SECRET,
-    cookie:{
-        secure:'true',
-        sameSite:"none",
-    },
-}))
 
 
 
 /**PORT */
-const PORT=process.env.PORT
+const PORT=2003||process.env.PORT
 
 app.listen(PORT,()=>{
     console.log(`SERVER RUNNING ON ${PORT}`)

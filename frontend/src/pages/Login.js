@@ -24,7 +24,7 @@ const Login = () => {
         method:'POST',
         body:JSON.stringify({username,password}),
         headers:{'Content-type':'application/json'},
-        // credentials:'include',
+        credentials:'include',
       })
       if(res.status===200){
         console.log(document.cookie)

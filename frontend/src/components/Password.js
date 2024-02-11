@@ -22,6 +22,7 @@ const Password = ({_id,social,userid,password}) => {
             method:'PUT',
             body:JSON.stringify({social,userid,password}),
             headers:{'Content-type':'application/json'},
+            credentials:'include',
         })
         if(res.ok){
             toast.success('Data deleted successfully', {
