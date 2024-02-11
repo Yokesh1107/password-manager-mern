@@ -37,9 +37,9 @@ const Data = () => {
         })
         return (cookie[cookieName]);
       }
-      const username=getCookie("user")
+      const username=localStorage.getItem('username')
     const handleSubmit=async(e)=>{
-        const res=await fetch('https://passwordmanage.onrender.com/data/new/'+username,{
+        const res=await fetch('https://passwords-yo4c.onrender.com/data/new/'+username,{
             method:'POST',
             body:JSON.stringify({socialmedia,userid,password}),
             credentials:'include',

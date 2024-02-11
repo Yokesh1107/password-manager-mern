@@ -20,13 +20,15 @@ const Login = () => {
       setPassword(e.target.value)
     }
     const handleSubmit=async(e)=>{
-      const res=await fetch('https://passwordmanage.onrender.com/auth/login',{
+      const res=await fetch('https://passwords-yo4c.onrender.com/auth/login',{
         method:'POST',
         body:JSON.stringify({username,password}),
         headers:{'Content-type':'application/json'},
-        credentials:'include',
+        // credentials:'include',
       })
       if(res.status===200){
+        console.log(document.cookie)
+        localStorage.setItem('username',username)
         setUserInfo({username:username,password:password})
         setLoggedIn(true)
         toast.success('Log in successful', {

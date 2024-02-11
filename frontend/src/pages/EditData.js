@@ -10,10 +10,10 @@ const EditData = () => {
     const [userid,setUserid]=useState('')
     const [password,setPassword]=useState('')
     useEffect(()=>{
-        if(document.cookie.length<=13){
+        if(localStorage.getItem('username')===null){
             navigate('/login')
            }
-        fetch('https://passwordmanage.onrender.com/data/edit/'+id).then(response=>{response.json().then(results=>{
+        fetch('https://passwords-yo4c.onrender.com/data/edit/'+id).then(response=>{response.json().then(results=>{
             setSocial(results.social)
             setUserid(results.userid)
             setPassword(results.password)
@@ -23,7 +23,7 @@ const EditData = () => {
     
     const handleSubmit=async()=>{
         
-        const res=await fetch('https://passwordmanage.onrender.com/data/update',{
+        const res=await fetch('https://passwords-yo4c.onrender.com/data/update',{
             method:'PUT',
             body:JSON.stringify({id,userid,social,password}),
             headers:{'Content-type':'application/json'},

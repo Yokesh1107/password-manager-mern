@@ -18,7 +18,7 @@ const Password = ({_id,social,userid,password}) => {
 
     }
     const handleSubmit=async(e)=>{
-        const res=await fetch('https://passwordmanage.onrender.com/data/delete/'+username,{
+        const res=await fetch('https://passwords-yo4c.onrender.com/data/delete/'+username,{
             method:'PUT',
             body:JSON.stringify({social,userid,password}),
             headers:{'Content-type':'application/json'},

@@ -8,8 +8,9 @@ const Logout = () => {
     const handleLogout=async()=>{
         setLoggedIn(false)
         setUserInfo({})
+        localStorage.setItem('username','')
         
-        const res=await fetch('http://localhost:2003/auth/logout',{
+        const res=await fetch('https://passwords-yo4c.onrender.com/auth/logout',{
             method:'POST',
             credentials:'include',
 
