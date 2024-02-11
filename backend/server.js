@@ -16,7 +16,12 @@ app.use(bodyParser.json({type: 'application/json'}));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.text({type: '*/*'}));
 app.use(cookieParser())
-
+app.use(session({
+   secret:process.env.SECRET,
+    resave: false,
+    saveUninitialized: true,
+    cookie: {httpOnly: false, secure: true}
+   }));
 
 
 /**PORT */
