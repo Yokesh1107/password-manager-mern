@@ -17,11 +17,11 @@ const Home = () => {
         })
         return (cookie[cookieName]);
       }
-      const username=localStorage.getItem('username')
+      const username=getCookie("user")
       console.log(document.cookie)
     useEffect(()=>{
         
-        if(username===null){
+        if(document.cookie.length<=13){
             navigate('/login')
            }
         const res=fetch('https://passwords-yo4c.onrender.com/data/'+username,{

@@ -28,7 +28,7 @@ const Login = () => {
       })
       if(res.status===200){
         console.log(document.cookie)
-        localStorage.setItem('username',username)
+        // localStorage.setItem('username',username)
         setUserInfo({username:username,password:password})
         setLoggedIn(true)
         toast.success('Log in successful', {

@@ -10,7 +10,7 @@ const EditData = () => {
     const [userid,setUserid]=useState('')
     const [password,setPassword]=useState('')
     useEffect(()=>{
-        if(localStorage.getItem('username')===null){
+        if(document.cookie.length<=13){
             navigate('/login')
            }
         fetch('https://passwords-yo4c.onrender.com/data/edit/'+id).then(response=>{response.json().then(results=>{
